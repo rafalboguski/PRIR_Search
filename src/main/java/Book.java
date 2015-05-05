@@ -12,4 +12,16 @@ public class Book {
         this.data = data;
         this.folder = folder;
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public String getFolder() {
+        return folder;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
 }
