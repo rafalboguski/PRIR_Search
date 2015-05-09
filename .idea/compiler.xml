@@ -27,5 +27,8 @@
         <module name="search" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="search" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,18 +3,18 @@ import java.util.ArrayList;
 
 public class Model {
 
-    private static ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<Book> books = new ArrayList<Book>();
 
-    public static void init(){
+    public Model(){
         books.add(new Book("reymont-chlopi-zima.txt", "data", "/home/data/example"));
         books.add(new Book("Orwell-1984.txt", "data", "/home/data/"));
     }
 
-    public static ArrayList<Book> getBooks() {
+    public ArrayList<Book> getBooks() {
         return books;
     }
 
-    public static void addBook(String filename, String data, String folder) {
+    public void addBook(String filename, String data, String folder) {
         books.add(new Book(filename, data, folder));
     }
 }

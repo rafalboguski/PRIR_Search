@@ -2,17 +2,22 @@ import java.util.ArrayList;
 
 public class Controller {
 
+    Model library;
 
-    public static ArrayList<Book> getBooks() {
-        return Model.getBooks();
+    public Controller(){
+        library = new Model();
     }
 
-    public static void addBook(String filename, String data, String folder) {
-        Model.addBook(filename, data, folder);
+    public  ArrayList<Book> getBooks() {
+        return library.getBooks();
     }
 
-    public static String search(String word) {
-        ArrayList<Book> books = Model.getBooks();
+    public  void addBook(String filename, String data, String folder) {
+        library.addBook(filename, data, folder);
+    }
+
+    public  String search(String word) {
+        ArrayList<Book> books = library.getBooks();
         String result = "";
 
 

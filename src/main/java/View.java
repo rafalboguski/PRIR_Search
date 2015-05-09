@@ -13,9 +13,9 @@ public class View {
 
     public static void main(String[] args) {
 
+        Controller controller = new Controller();
 
-
-        get("/files", (req, res) -> Controller.getBooks(), json());
+        get("/files", (req, res) -> controller.getBooks(), json());
 
 
         //curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"filename":"filename","data":"data","folder":"folder"}'  http://localhost:4567/push
@@ -33,7 +33,7 @@ public class View {
             print("  folder: " + folder);
             print("PUT END----------------");
 
-            Controller.addBook(filename, data, folder);
+            controller.addBook(filename, data, folder);
 
 
             return "Done";
@@ -45,7 +45,7 @@ public class View {
 
 
 
-            return "Matches in files: "+Controller.search(req.params(":word"));
+            return "Matches in files: "+controller.search(req.params(":word"));
 
         }, json());
 
