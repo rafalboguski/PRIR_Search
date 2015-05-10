@@ -21,7 +21,6 @@ public class Seeker extends Thread {
 
     @Override
     public void run(){
-        System.out.println(getName()+" running ...");
         Result tmp;
         for(int i=from;i<to;i++){
             tmp =books.get(i).search(word);

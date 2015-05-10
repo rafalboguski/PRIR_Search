@@ -7,18 +7,7 @@ public class Model {
     public int numberOfBooks =0;
 
     public Model(){
-        addBook("reymont-chlopi-zima.txt", "testoilewe ala zapytanie ile ala ma kotow", "/home/data/example");
-        addBook("Orwell-1984.txt", "idhbibchushbcuxcvxvcsgfhdfsc  gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbdsfdsfshbcxcvxvcusdvcxfhdfsc  gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbdsfdcxcvxcxcvxvcvxcfsc  gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbibcscxcvxcvxcfsc  gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbibxcvxcvxcvcxvcxcvxcvxcfsc  gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbixxcvxcvxcvcxvcxcvxcvxc gfsd vf", "/home/data/");
-        addBook("Orwell-1984.txt", "idhbixxilecvxcvxcvcxvxcvshbcusgfhdfsc  gfsd vf", "/home/data/");
-    }
 
-    public ArrayList<Book> getBooks() {
-        return books;
     }
 
     public void addBook(String filename, String data, String folder) {
@@ -27,10 +16,9 @@ public class Model {
     }
 
 
-    public int getNumberOfBooks() {
-        return numberOfBooks;
-    }
-
+    /*
+        Rekursywnie dzieli elements na w miare rowne czesci i wkada je do results
+     */
     public int[] divideEqually(int[] results, int elements) {
         int threads = results.length;
         int tmp = elements / threads;
@@ -52,4 +40,14 @@ public class Model {
         }
 
     }
+
+
+    public int getNumberOfBooks() {
+        return numberOfBooks;
+    }
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+
 }

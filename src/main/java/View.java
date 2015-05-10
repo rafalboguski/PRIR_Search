@@ -8,6 +8,13 @@ import org.json.*;
 
 import java.util.Objects;
 
+
+/*
+    Tutaj obsuguje zapytnia http i oddaje sterowanie do kontrolera
+
+ */
+
+
 public class View {
 
 
