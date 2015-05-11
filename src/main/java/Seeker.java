@@ -20,13 +20,6 @@ public class Seeker implements Runnable {
     public void run(){
 
         long time = System.currentTimeMillis();
-
-//        for(Book b:books){
-//            try { Thread.sleep(1); } catch (InterruptedException e) {}
-//        }
-//
-//        results.add(new Result(3,"sdfsdf","sdfsdf"));
-
         Result tmp;
         for(Book b:books){
             //try { Thread.sleep(1); } catch (InterruptedException e) {}

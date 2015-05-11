@@ -19,15 +19,15 @@ public class Book {
         boolean init = false;
         for (int i = 0; i < lines.length; i++) {
             for (int j = -1; (j = lines[i].indexOf(word, j + 1)) != -1; ) {
-//                if(!init) {
-//                    x = new Result(0, filename, folder);
-//                    init = true;
-//                }
-//                x.addPosition(i + 1, j);
+                if(!init) {
+                    x = new Result(0, filename, folder);
+                    init = true;
+                }
+                x.addPosition(i + 1, j);
             }
         }
 
-        return null;
+        return x;
     }
 
 

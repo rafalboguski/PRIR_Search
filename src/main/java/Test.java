@@ -10,7 +10,7 @@ public class Test {
 
         Controller con = new Controller();
 
-        populate(con, 44);
+        populate(con, 1000);
 
 
         ArrayDeque<Result> wyn = null;
@@ -45,7 +45,7 @@ public class Test {
 
             String text = "";
             String aaa = UUID.randomUUID().toString();
-            for(int w =0;w<2000;w++){
+            for(int w =0;w<12;w++){
                 text += aaa+"\n";
             }
 
