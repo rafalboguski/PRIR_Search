@@ -1,57 +1,69 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.*;
 
-/*
-    kontroler ma model w korym wykonujemy bezposrednie akcje jak doanie albo szukanie,
-    sam nie powinien nimi operowaca ale obslugiwac watki, i przekazywac sterowanie
- */
 
 public class Controller {
 
-    Model library;
-
-
-    // na potzreby testwoania szybkosci
-    public int THREADS_NUM = 0;
-
     public Controller() {
-        library = new Model();
+
+        books = new ArrayList[THREADS_NUM];
+        results = new ArrayDeque<Result>();
+
+        for (int i = 0; i < THREADS_NUM; i++)
+            books[i] = new ArrayList<>();
+
     }
 
-    public ArrayList<Book> getBooks() {
-        return library.getBooks();
-    }
+
+
+    private int THREADS_NUM = 4;
+    private ArrayList<Book>[] books;
+    private ArrayDeque<Result> results;
+
+    private int adding_quee_id = 0;
 
     public void addBook(String filename, String data, String folder) {
-        library.addBook(filename, data, folder);
+        books[adding_quee_id++].add(new Book(filename,data,folder));
+        if(adding_quee_id>=THREADS_NUM)
+            adding_quee_id=0;
     }
 
-    public ArrayList<Result> search(String word) {
-
-        ArrayList<Result> results = new ArrayList<>();
-        //System.out.println("threads: "+THREADS_NUM);
-        Seeker[] seekers = new Seeker[THREADS_NUM];
-        int[] range = new int[THREADS_NUM];
+    public LinkedList<Book> getBooks() {
+        LinkedList<Book> result = new LinkedList<>();
         for (int i = 0; i < THREADS_NUM; i++)
-            range[i] = 0;
+            result.addAll(books[i]);
+        return result;
+    }
 
-        range = library.divideEqually(range, library.getNumberOfBooks());
 
-        int tmp = 0;
-        for (int i = 0; i < THREADS_NUM; i++) {
-            seekers[i] = new Seeker(getBooks(), tmp, tmp += range[i], word, results);
-        }
+    public ArrayDeque<Result>  search(String word) throws InterruptedException {
+
+        results.clear();
+        ArrayList<Thread> threads = new ArrayList<>();
+
 
         for (int i = 0; i < THREADS_NUM; i++)
-            seekers[i].start();
+            threads.add(new Thread(new Seeker(books[i], word, results)));
 
-        try {
 
-            for (int i = 0; i < THREADS_NUM; i++)
-                seekers[i].join();
+        long join = System.currentTimeMillis();
 
-        } catch (InterruptedException e) {e.printStackTrace();}
+
+        for (Thread t : threads)
+            t.start();
+
+        for (Thread t : threads)
+            t.join();
+
+        System.out.println("    Join__time " + (System.currentTimeMillis() - join) + " ms");
 
 
         return results;
     }
+
+
+
 }

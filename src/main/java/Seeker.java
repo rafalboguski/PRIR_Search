@@ -1,33 +1,44 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 
-public class Seeker extends Thread {
+public class Seeker implements Runnable {
 
     private ArrayList<Book> books= new ArrayList<>();
-    private ArrayList<Result> results;
-
-    private int from =0;
-    private int to =0;
+    private ArrayDeque<Result> results;
 
     private String word;
 
-    public Seeker(ArrayList<Book> books, int from, int to, String word, ArrayList<Result> results) {
+    public Seeker( ArrayList<Book> books, String word, ArrayDeque<Result> results) {
         this.books = books;
-        this.from = from;
-        this.to = to;
-        this.word = word;
         this.results = results;
+        this.word = word;
     }
 
     @Override
     public void run(){
+
+        long time = System.currentTimeMillis();
+
+//        for(Book b:books){
+//            try { Thread.sleep(1); } catch (InterruptedException e) {}
+//        }
+//
+//        results.add(new Result(3,"sdfsdf","sdfsdf"));
+
         Result tmp;
-        for(int i=from;i<to;i++){
-            tmp =books.get(i).search(word);
-            if(tmp!= null )
+        for(Book b:books){
+            //try { Thread.sleep(1); } catch (InterruptedException e) {}
+            tmp=b.search(word);
+            if(tmp!=null)
                 results.add(tmp);
         }
+
+        System.out.println(  "_"+ (System.currentTimeMillis() - time));
     }
 
-
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
 }
