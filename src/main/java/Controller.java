@@ -15,13 +15,12 @@ public class Controller {
         for (int i = 0; i < DATA_DIVIDER; i++)
             books[i] = new ArrayList<>();
 
-        executor = Executors.newFixedThreadPool(THREADS_NUM);
+        executor = Executors.newCachedThreadPool(); // tutaj mozna sie bawic roznymi rodzajami executorow casched imo najlepszy
     }
 
 
-
-    private int DATA_DIVIDER = 4;
-    private int THREADS_NUM = 1;
+    private int DATA_DIVIDER = 44; // Liczba ksiazek/DATA_DIVIDER = ksiazka w jednym zadaniu do pool-a
+    private int THREADS_NUM = 4;  // tylko do testow innych executorow newCachedThreadPool daje zawsze max ilosc watkow
 
     private ArrayList<Book>[] books;
     private ArrayDeque<Result> results;
@@ -45,9 +44,7 @@ public class Controller {
     List<Future<ArrayDeque<Result>>> list;
     public ArrayDeque<Result>  search(String word) throws InterruptedException {
 
-
         results.clear();
-
 
         list = new ArrayList<Future<ArrayDeque<Result>>>();
         long join = System.currentTimeMillis();
@@ -56,20 +53,11 @@ public class Controller {
             list.add( executor.submit(new Seeker(books[i], word)));
         }
 
-
-        for(Future<ArrayDeque<Result>> fut : list){
-            try {
-
-                results.addAll(fut.get());
-            } catch (InterruptedException | ExecutionException e) {}
-        }
-
-        System.out.println("    __time " + (System.currentTimeMillis() - join) + " ms");
-
-        executor.shutdown();
+        for(Future<ArrayDeque<Result>> fut : list)
+            try { results.addAll(fut.get()); } catch (InterruptedException | ExecutionException e) {}
 
 
-
+        System.out.println((System.currentTimeMillis() - join));
 
         return results;
     }

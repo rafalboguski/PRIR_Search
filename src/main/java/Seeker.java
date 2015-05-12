@@ -28,7 +28,7 @@ public class Seeker implements Callable<ArrayDeque<Result>> {
                 results.add(tmp);
         }
 
-        System.out.println(  "_"+ (System.currentTimeMillis() - time)+"  books__"+books.size());
+        //System.out.println(  "_"+ (System.currentTimeMillis() - time)+"  books__"+books.size());
         return results;
     }
 

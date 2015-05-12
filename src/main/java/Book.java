@@ -15,8 +15,9 @@ public class Book {
 
     public Result search(String word) {
 
-        Random r = new Random();
-        //try { Thread.sleep(1); } catch (InterruptedException e) {}
+        // To jest moje proste szukanie
+        // Zrob tutaj jakis szybki algorytm to szukanie wzorcu (word) w tekscie (data albo lines)
+
 //        Result x = null;
 //        boolean init = false;
 //        for (int i = 0; i < lines.length; i++) {
@@ -28,12 +29,19 @@ public class Book {
 //                x.addPosition(i + 1, j);
 //            }
 //        }
+
+
+        //////////////////////////////////////////////////////////
+        //  to jest do testowania zrownoleglenia
+        //  wykonuje sie prawie w takim samym czsie dla kazej ksiazki
+        //  jak bedziesz robil szukanie to zakomentuj
+        Random r = new Random();
         int x =0;
         for( int i =0;i<1000;i++){
             x+=r.nextInt();
         }
-       // System.out.println("book: "+filename);
         return new Result(Integer.parseInt(filename),String.valueOf(x),"sdf");
+        //////////////////////////////////////////////////////////
     }
 
 
