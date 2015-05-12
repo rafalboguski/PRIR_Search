@@ -10,7 +10,7 @@ public class Test {
 
         Controller con = new Controller();
 
-        populate(con, 1000);
+        populate(con, 1000000);
 
 
         ArrayDeque<Result> wyn = null;
@@ -44,12 +44,12 @@ public class Test {
             //UUID.randomUUID().toString()  losowy string
 
             String text = "";
-            String aaa = UUID.randomUUID().toString();
-            for(int w =0;w<12;w++){
+            String aaa = "wenocbbuoiewcuinhkxsucgfuisvsicbdsfhcuisdbsduicsd";//UUID.randomUUID().toString();
+          //  for(int w =0;w<12;w++){
                 text += aaa+"\n";
-            }
+          //  }
 
-            controller.addBook(String.valueOf(i), text, String.valueOf(i));
+            controller.addBook(String.valueOf(i+1), text, String.valueOf(i));
         }
         System.out.println("");
     }

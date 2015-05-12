@@ -9,17 +9,20 @@ public class Controller {
 
     public Controller() {
 
-        books = new ArrayList[THREADS_NUM];
+        books = new ArrayList[DATA_DIVIDER];
         results = new ArrayDeque<Result>();
 
-        for (int i = 0; i < THREADS_NUM; i++)
+        for (int i = 0; i < DATA_DIVIDER; i++)
             books[i] = new ArrayList<>();
 
+        executor = Executors.newFixedThreadPool(THREADS_NUM);
     }
 
 
 
-    private int THREADS_NUM = 4;
+    private int DATA_DIVIDER = 4;
+    private int THREADS_NUM = 1;
+
     private ArrayList<Book>[] books;
     private ArrayDeque<Result> results;
 
@@ -27,38 +30,45 @@ public class Controller {
 
     public void addBook(String filename, String data, String folder) {
         books[adding_quee_id++].add(new Book(filename,data,folder));
-        if(adding_quee_id>=THREADS_NUM)
+        if(adding_quee_id>= DATA_DIVIDER)
             adding_quee_id=0;
     }
 
     public LinkedList<Book> getBooks() {
         LinkedList<Book> result = new LinkedList<>();
-        for (int i = 0; i < THREADS_NUM; i++)
+        for (int i = 0; i < DATA_DIVIDER; i++)
             result.addAll(books[i]);
         return result;
     }
 
-
+    ExecutorService executor;
+    List<Future<ArrayDeque<Result>>> list;
     public ArrayDeque<Result>  search(String word) throws InterruptedException {
 
+
         results.clear();
-        ArrayList<Thread> threads = new ArrayList<>();
 
 
-        for (int i = 0; i < THREADS_NUM; i++)
-            threads.add(new Thread(new Seeker(books[i], word, results)));
-
-
+        list = new ArrayList<Future<ArrayDeque<Result>>>();
         long join = System.currentTimeMillis();
 
+        for(int i=0; i< DATA_DIVIDER; i++){
+            list.add( executor.submit(new Seeker(books[i], word)));
+        }
 
-        for (Thread t : threads)
-            t.start();
 
-        for (Thread t : threads)
-            t.join();
+        for(Future<ArrayDeque<Result>> fut : list){
+            try {
 
-        System.out.println("    Join__time " + (System.currentTimeMillis() - join) + " ms");
+                results.addAll(fut.get());
+            } catch (InterruptedException | ExecutionException e) {}
+        }
+
+        System.out.println("    __time " + (System.currentTimeMillis() - join) + " ms");
+
+        executor.shutdown();
+
+
 
 
         return results;
