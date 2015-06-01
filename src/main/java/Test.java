@@ -1,4 +1,4 @@
-import prototypes.Main;
+//import prototypes.Main;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Test {
 
- 
+
     public static void main(String[] argv) throws InterruptedException {
 
         Controller con = new Controller();
@@ -31,10 +31,10 @@ public class Test {
             int match = 0;
             for (Result r : wyn) {
                 match += r.positions.size();
-                //    System.out.println(r); // wypisanie wynikow
+                //System.out.println(r); // wypisanie wynikow
 
             }
-            //System.out.println("Found: " + match); //wypisanie liczby znalezionych wystapien
+            System.out.println("Found: " + match); //wypisanie liczby znalezionych wystapien
 
         }
     }
