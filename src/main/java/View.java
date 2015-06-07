@@ -11,11 +11,6 @@ import java.util.Objects;
 import java.util.Random;
 
 
-/*
-    Tutaj obsuguje zapytnia http i oddaje sterowanie do kontrolera
-
- */
-
 
 public class View {
 
@@ -26,37 +21,17 @@ public class View {
         Controller controller = new Controller();
 
         // liczba ksiazek jako parametr
-        Test.populate(controller, 1000);
-
-        ArrayDeque<Result> wyn = null;
-
-        Random ran = new Random();
-
-        // w petli robie szukanie
-        // dla jedego nie jest stabilne
-        // najpierw musi sie rozkrecic
-        // wtedy widac efekty zrownoleglenia
-
-//        for (int i = 0; i < 250; i++) {
-//
-//            wyn = controller.search(String.valueOf(ran.nextInt(10)));
-//            int match = 0;
-//            for (Result r : wyn) {
-//                match += r.positions.size();
-//                //System.out.println(r); // wypisanie wynikow
-//
-//            }
-//            System.out.println("Found: " + match); //wypisanie liczby znalezionych wystapien
-//
-//        }
-//
-
+        //Test.populate(controller, 1000);
+        controller.addBook("kot", "ala ma kota", "kot");
+        controller.addBook("przedszkole", "ta \nala nie lubi chodzic do swojego przedszkola taka to jest ala", "przedszkole");
 
 
 
         get("/files", (req, res) -> controller.getBooks(), json());
 
 
+
+        // ogaarnij to taj jak mowilem na fb
         //curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"filename":"filename","data":"data","folder":"folder"}'  http://localhost:4567/push
         post("/push", (req, res) -> {
 
@@ -80,11 +55,9 @@ public class View {
 
         get("/search/:word", (req, res) -> {
 
+            ArrayDeque<Result> wyn = controller.search(req.params(":word"));
 
-
-
-
-            return "Matches in files: "+controller.search(req.params(":word"));
+            return wyn;
 
         }, json());
 
