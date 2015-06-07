@@ -40,7 +40,7 @@ public class Test {
     }
 
 
-    private static void populate(Controller controller, int BOOKS_NUM) {
+    static void populate(Controller controller, int BOOKS_NUM) {
 
         for (int i = 0; i < BOOKS_NUM; i++) {
             int tmp = (int) (BOOKS_NUM/10f);
