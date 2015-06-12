@@ -1,17 +1,13 @@
 /**
  * Created by monum_000 on 2015-06-01.
  */
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 
 public class BoyerMoore {
 
 
-    public static void match(String pattern, String text, int lineAt, Result result) {
-        List<Result.row> matches = new Vector<>();
+    public static ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+        ArrayList<Result.row> matches = new ArrayList<>();
         int texLen = text.length();
         int patLen = pattern.length();
         Map<Character, Integer> rightMostIndexes = preprocessForBadCharacterShift(pattern);
@@ -34,14 +30,15 @@ public class BoyerMoore {
                     break;
 
                 } else if (indexInPattern == 0) {
-                    result.addPosition(alignedAt, lineAt);
+                    Result.row buf = new Result.row(lineAt, alignedAt);
+                    matches.add(buf);
                     alignedAt++;
                 }
 
             }
         }
 
-
+        return matches;
     }
     private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern){
         Map<Character, Integer> map = new HashMap<>();

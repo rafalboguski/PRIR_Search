@@ -27,11 +27,11 @@ public class Test {
 
         for (int i = 0; i < 250; i++) {
 
-            wyn = con.search(String.valueOf(ran.nextInt(10)));
+            wyn = con.search("noc");
             int match = 0;
             for (Result r : wyn) {
                 match += r.positions.size();
-                //System.out.println(r); // wypisanie wynikow
+                System.out.println(r.positions.toString()); // wypisanie wynikow
 
             }
             System.out.println("Found: " + match); //wypisanie liczby znalezionych wystapien
@@ -51,10 +51,10 @@ public class Test {
             //UUID.randomUUID().toString()  losowy string b3g8s8-a8h3 itd
 
             String text = "";
-            String aaa = "wenocbbuoiewcuinhkxsucgfuisvsicbdsfhcuisdbsduicsd";//UUID.randomUUID().toString();
-          //  for(int w =0;w<12;w++){ // petla do sklejania bardzo dlugich tekstow
-                text += aaa+"\n";
-          //  }
+            String aaa = "wenocbbuoiewcuinochkxsucgfuisvsicbdnocsfhcuisdbsduicsd";//UUID.randomUUID().toString();
+           for(int w =0;w<5;w++){ // petla do sklejania bardzo dlugich tekstow
+                text += aaa+"\r\n";
+            }
             controller.addBook(String.valueOf(i+1), text, String.valueOf(i));
         }
         System.out.println("");

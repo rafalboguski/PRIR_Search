@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Result {
 
-    public class row{
+    public static class row{
         int line;
         int pos;
 
@@ -35,7 +35,7 @@ public class Result {
     public void addPosition(int line, int pos){
         positions.add(new row(line, pos));
     }
-
+    public void addPosition(ArrayList<row> r ){positions.addAll(r);}
     @Override
     public String toString() {
         return "Result{" +
