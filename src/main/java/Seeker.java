@@ -16,7 +16,7 @@ public class Seeker implements Callable<ArrayDeque<Result>> {
     }
 
     ArrayDeque<Result> results = new ArrayDeque<>();
-    Result tmp;
+    Result tmp=null;
 
     @Override
     public ArrayDeque<Result> call() throws Exception {
@@ -24,8 +24,9 @@ public class Seeker implements Callable<ArrayDeque<Result>> {
 
         for (Book b : books) {
             //try { Thread.sleep(1); } catch (InterruptedException e) {}
-            if ((tmp = b.search(word)) != null)
-                results.add(tmp);
+            if ((tmp = b.search(word)) != null )
+                if(tmp.positions.size()>0)
+                    results.add(tmp);
         }
 
         //System.out.println(  "_"+ (System.currentTimeMillis() - time)+"  books__"+books.size());
