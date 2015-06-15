@@ -22,8 +22,8 @@ public class View {
 
         // liczba ksiazek jako parametr
         //Test.populate(controller, 1000);
-        controller.addBook("kot", "ala ma kota", "kot");
-        controller.addBook("przedszkole", "ta \nala nie lubi chodzic do swojego przedszkola taka to jest ala", "przedszkole");
+        //controller.addBook("kot", "ala ma kota", "kot");
+        //controller.addBook("przedszkole", "ta \nala nie lubi chodzic do swojego przedszkola taka to jest ala", "przedszkole");
 
 
 
