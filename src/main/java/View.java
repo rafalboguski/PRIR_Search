@@ -47,19 +47,20 @@ public class View {
             String folder = String.valueOf(json.get("folder"));
 
             print("PUT BEGIN--------------");
-            print("  filename: " + filename);
-            print("  data: " + data);
-            print("  folder: " + folder);
-            print("PUT END----------------");
+//            print("  filename: " + filename);
+//            print("  data: " + data);
+//            print("  folder: " + folder);
+//            print("PUT END----------------");
 
             controller.addBook(filename, data, folder);
 
 
-            return "Done";
-        }, json());
+            return "<p>OK</p>";
+        });
 
         get("/search/:word", (req, res) -> {
 
+            print("Search: "+req.params(":word"));
             ArrayDeque<Result> wyn = controller.search(req.params(":word"));
 
             return wyn;
