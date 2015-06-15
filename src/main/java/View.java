@@ -1,4 +1,4 @@
-/*import com.google.gson.Gson;
+import com.google.gson.Gson;
 import spark.*;
 
 
@@ -35,7 +35,12 @@ public class View {
         //curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"filename":"filename","data":"data","folder":"folder"}'  http://localhost:4567/push
         post("/push", (req, res) -> {
 
-            JSONObject json = new JSONObject(req.body().substring(1, req.body().length() - 1));
+            //print("/////////////////");
+            //print(req.body());
+            //print("/////////////////");
+            //print(req.body().substring(1, req.body().length() - 1));
+
+            JSONObject json = new JSONObject(req.body());
 
             String filename = String.valueOf(json.get("filename"));
             String data = String.valueOf(json.get("data"));
@@ -51,7 +56,7 @@ public class View {
 
 
             return "Done";
-        });
+        }, json());
 
         get("/search/:word", (req, res) -> {
 
@@ -76,4 +81,4 @@ public class View {
         System.out.println(o);
     }
 
-} */
+}
