@@ -30,7 +30,7 @@ public class BoyerMoore {
                     break;
 
                 } else if (indexInPattern == 0) {
-                    Result.row buf = new Result.row(lineAt, alignedAt);
+                    Result.row buf = new Result.row(lineAt+1, alignedAt);
                     matches.add(buf);
                     alignedAt++;
                 }

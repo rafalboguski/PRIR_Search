@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Date;
+
 public class Book {
 
     private String filename;
@@ -14,20 +15,23 @@ public class Book {
     }
 
 
-
-
     public Result search(String word) {
 
         // To jest moje proste szukanie
         // Zrob tutaj jakis szybki algorytm to szukanie wzorcu (word) w tekscie (data albo lines)
         Date id = new Date();
-       Result x = new Result(id.getTime(),this.filename,this.folder);
-       boolean init = false;
-       for (int i = 0; i < lines.length; i++) {
-           ArrayList<Result.row> buf =  BoyerMoore.match(word,lines[i],i);
-           x.addPosition(buf);
-       }
-
+        Result x = new Result(id.getTime(), this.filename, this.folder);
+        boolean init = false;
+        int pos = 0;
+        for (int i = 0; i < lines.length; i++) {
+            ArrayList<Result.row> buf = BoyerMoore.match(word, lines[i], i);
+            for (Result.row match : buf){
+                match.pos+=pos;
+            }
+            x.addPosition(buf);
+            // \n kodowany jako 2 znaki
+            pos+=lines[i].length()+2;
+        }
 
 
         //////////////////////////////////////////////////////////
@@ -43,8 +47,6 @@ public class Book {
         ////////////////////////////////////////////////////////// */
         return x;
     }
-
-
 
 
     public String[] getData() {
