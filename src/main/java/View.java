@@ -48,9 +48,9 @@ public class View {
 
             print("PUT: "+filename);
             //print("  filename: " + filename);
-            print("  data: " + data);
-//            print("  folder: " + folder);
-            print("PUT END----------------");
+            //print("  data: " + data);
+            //print("  folder: " + folder);
+            //print("PUT END----------------");
 
             controller.addBook(filename, data, folder);
 
@@ -60,8 +60,9 @@ public class View {
 
         get("/search/:word", (req, res) -> {
 
-            print("Search: "+URLDecoder.decode(req.params(":word"), "UTF-8"));
-            ArrayDeque<Result> wyn = controller.search(URLDecoder.decode(req.params(":word") , "UTF-8"));
+            print("Search: "+req.params(":word"));
+
+            ArrayDeque<Result> wyn = controller.search(req.params(":word"));
 
 
             print("Result: "+wyn.size());

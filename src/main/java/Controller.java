@@ -27,13 +27,13 @@ public class Controller {
 
     private int adding_quee_id = 0;
 
-    public void addBook(String filename, String data, String folder) {
+    synchronized public void addBook(String filename, String data, String folder) {
         books[adding_quee_id++].add(new Book(filename,data,folder));
         if(adding_quee_id>= DATA_DIVIDER)
             adding_quee_id=0;
     }
 
-    public LinkedList<Book> getBooks() {
+    synchronized public LinkedList<Book> getBooks() {
         LinkedList<Book> result = new LinkedList<>();
         for (int i = 0; i < DATA_DIVIDER; i++)
             result.addAll(books[i]);
@@ -42,9 +42,9 @@ public class Controller {
 
     ExecutorService executor;
     List<Future<ArrayDeque<Result>>> list;
-    public ArrayDeque<Result>  search(String word) throws InterruptedException {
+    synchronized public ArrayDeque<Result> search(String word) throws InterruptedException {
 
-        results.clear();
+        results = new ArrayDeque<Result>();
 
         list = new ArrayList<Future<ArrayDeque<Result>>>();
         long join = System.currentTimeMillis();
@@ -57,7 +57,7 @@ public class Controller {
             try { results.addAll(fut.get()); } catch (InterruptedException | ExecutionException e) {}
 
 
-        System.out.println((System.currentTimeMillis() - join));
+        //System.out.println((System.currentTimeMillis() - join));
 
         return results;
     }
