@@ -5,8 +5,12 @@ import java.util.*;
 
 public class BoyerMoore {
 
+    private ArrayList<Result.row> matches;
+    public BoyerMoore(String pattern, String text, int lineAt){
+        this.matches = match(pattern,text,lineAt);
+    }
 
-    public static ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+    public ArrayList<Result.row> match(String pattern, String text, int lineAt) {
         ArrayList<Result.row> matches = new ArrayList<>();
         int texLen = text.length();
         int patLen = pattern.length();
@@ -62,4 +66,10 @@ public class BoyerMoore {
         for (Integer integer : matches) System.out.println("Match at: " + integer);
         //System.out.println((matches.equals(Arrays.asList(1, 3)) ? "OK" : "Failed")); */
     }
+
+    public ArrayList<Result.row> getMatches() {
+        return matches;
+    }
+
+
 }

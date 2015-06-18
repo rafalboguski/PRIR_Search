@@ -24,7 +24,8 @@ public class Book {
         boolean init = false;
         int pos = 0;
         for (int i = 0; i < lines.length; i++) {
-            ArrayList<Result.row> buf = BoyerMoore.match(word, lines[i], i);
+            BoyerMoore buf1 = new BoyerMoore(word, lines[i], i);
+            ArrayList<Result.row> buf = buf1.getMatches();
             for (Result.row match : buf){
                 match.pos+=pos;
             }

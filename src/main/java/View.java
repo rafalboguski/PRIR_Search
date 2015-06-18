@@ -61,7 +61,7 @@ public class View {
         get("/search/:word", (req, res) -> {
 
             print("Search: "+req.params(":word"));
-
+            //tu by trzeba klase zrobic co dzili wynik na ksiazke//
             ArrayDeque<Result> wyn = controller.search(req.params(":word"));
 
 
