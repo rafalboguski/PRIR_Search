@@ -5,10 +5,7 @@ import java.util.*;
 
 public class BoyerMoore {
 
-    private ArrayList<Result.row> matches;
-    public BoyerMoore(String pattern, String text, int lineAt){
-        this.matches = match(pattern,text,lineAt);
-    }
+
 
     public ArrayList<Result.row> match(String pattern, String text, int lineAt) {
         ArrayList<Result.row> matches = new ArrayList<>();
@@ -54,22 +51,7 @@ public class BoyerMoore {
     }
 
 
-    public static void main(String[] args) {
-      /*  List<Integer> matches = BoyerMoore.match("Ala ", "Ala ma kota, kot ma Ala");
-        List<Integer> matches2 = BoyerMoore.match(" Ala ", "Ala ma kota, kot ma Ala");
-        List<Integer> matches3 = BoyerMoore.match(" Ala", "Ala ma kota, kot ma Ala");
-        System.out.println(matches.toString());
-        System.out.println(matches2.toString());
-        System.out.println(matches3.toString());
-        matches.addAll(BoyerMoore.match(" Ala", "Ala ma kota, kot ma Ala"));
-        System.out.println(matches.toString());
-        for (Integer integer : matches) System.out.println("Match at: " + integer);
-        //System.out.println((matches.equals(Arrays.asList(1, 3)) ? "OK" : "Failed")); */
-    }
 
-    public ArrayList<Result.row> getMatches() {
-        return matches;
-    }
 
 
 }

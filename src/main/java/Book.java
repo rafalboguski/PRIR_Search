@@ -17,35 +17,20 @@ public class Book {
 
     public Result search(String word) {
 
-        // To jest moje proste szukanie
-        // Zrob tutaj jakis szybki algorytm to szukanie wzorcu (word) w tekscie (data albo lines)
         Date id = new Date();
+        BoyerMoore bayerMoore = new BoyerMoore();
+        ArrayList<Result.row> buf;
         Result x = new Result(id.getTime(), this.filename, this.folder);
-        boolean init = false;
         int pos = 0;
         for (int i = 0; i < lines.length; i++) {
-            BoyerMoore buf1 = new BoyerMoore(word, lines[i], i);
-            ArrayList<Result.row> buf = buf1.getMatches();
+            buf = bayerMoore.match(word, lines[i], i);
             for (Result.row match : buf){
                 match.pos+=pos;
             }
             x.addPosition(buf);
-            // \n kodowany jako 2 znaki
-            pos+=lines[i].length()+2;
+            pos+=lines[i].length()+2; // \n kodowany jako 2 znaki
         }
 
-
-        //////////////////////////////////////////////////////////
-        //  to jest do testowania zrownoleglenia
-        //  wykonuje sie prawie w takim samym czsie dla kazej ksiazki
-        //  jak bedziesz robil szukanie to zakomentuj
-        /*Random r = new Random();
-        int x =0;
-        for( int i =0;i<1000;i++){
-            x+=r.nextInt();
-        }
-        return new Result(Integer.parseInt(filename),String.valueOf(x),"sdf");
-        ////////////////////////////////////////////////////////// */
         return x;
     }
 
