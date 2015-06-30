@@ -1,13 +1,46 @@
-/**
- * Created by monum_000 on 2015-06-01.
- */
+
 import java.util.*;
+import java.util.concurrent.Callable;
 
-public class BoyerMoore {
+public class BoyerMoore implements Callable<ArrayList<Result.row>> {
 
 
+    private Book book = null;
+    private String word = null;
+    private int from;
+    private int to;
+    private int pos;
 
-    public ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+    public BoyerMoore(Book book, String word,int from,int  to, int pos) {
+        this.book = book;
+        this.word = word;
+        this.from = from;
+        this.to = to;
+        this.pos = pos;
+    }
+
+    @Override
+    public ArrayList<Result.row> call() {
+
+        ArrayList<Result.row> buf = new ArrayList<>();
+
+        for (int i = from; i < to; i++) {
+
+            ArrayList<Result.row> ttt = match(word, book.getLines()[i], i);
+            for (Result.row match : ttt){
+                match.pos=pos;
+            }
+
+            buf.addAll(ttt);
+
+            pos+=book.getLines()[i].length()+2;
+        }
+        return buf;
+    }
+
+
+    private  ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+
         ArrayList<Result.row> matches = new ArrayList<>();
         int texLen = text.length();
         int patLen = pattern.length();
@@ -38,7 +71,6 @@ public class BoyerMoore {
 
             }
         }
-
         return matches;
     }
     private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern){
@@ -52,6 +84,9 @@ public class BoyerMoore {
 
 
 
+    public void setTo(int to) {
+        this.to = to;
+    }
 
 
 }

@@ -33,10 +33,13 @@ public class Controller {
             adding_quee_id=0;
     }
 
-    synchronized public LinkedList<Book> getBooks() {
-        LinkedList<Book> result = new LinkedList<>();
-        for (int i = 0; i < DATA_DIVIDER; i++)
-            result.addAll(books[i]);
+    synchronized public LinkedList<Book.Data> getBooks() {
+        LinkedList<Book.Data> result = new LinkedList<>();
+        for (int i = 0; i < DATA_DIVIDER; i++) {
+            for(Book b:books[i]){
+                result.add(b.getData());
+            }
+        }
         return result;
     }
 

@@ -1,50 +1,101 @@
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Date;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class Book {
 
-    private String filename;
-    private String[] lines;
-    private String folder;
 
-    public Book(String filename, String data, String folder) {
-        this.filename = filename;
-        this.lines = data.split(System.getProperty("line.separator"));
-        this.folder = folder;
+    public class Data{
+
+        private String filename;
+        private String[] data;
+        private String folder;
+
+        public Data(String filename, String[] lines, String folder) {
+            this.filename = filename;
+            this.data = lines;
+            this.folder = folder;
+        }
     }
 
+    public Data getData(){
+        return this.data;
+    }
 
-    public Result search(String word) {
+    private Data data;
 
-        Date id = new Date();
-        BoyerMoore bayerMoore = new BoyerMoore();
-        ArrayList<Result.row> buf;
-        Result x = new Result(id.getTime(), this.filename, this.folder);
-        int pos = 0;
-        for (int i = 0; i < lines.length; i++) {
-            buf = bayerMoore.match(word, lines[i], i);
-            for (Result.row match : buf){
-                match.pos+=pos;
-            }
-            x.addPosition(buf);
-            pos+=lines[i].length()+2; // \n kodowany jako 2 znaki
+
+        ExecutorService executor = Executors.newCachedThreadPool();
+
+
+        public Book(String filename, String data, String folder) {
+            this.data = new Data(filename,data.split(System.getProperty("line.separator")),folder);
         }
 
-        return x;
+
+        public Result search(String word) {
+
+
+            ArrayList<Result.row> positions = new ArrayList<Result.row>();
+            List<Future<ArrayList<Result.row>>> list = new ArrayList<Future<ArrayList<Result.row>>>();
+
+            int n = Runtime.getRuntime().availableProcessors();
+
+            int len = getLines().length;
+
+            int div = (int)((float)len/(float)(n));
+
+
+            ArrayList<BoyerMoore> workers = new ArrayList<>();
+            for(int i =0;i<n;i++){
+
+                int pos =0;
+                for(int j=0;j< getLines().length && j<div*i;j++){
+                    pos+= getLines()[j].length();
+                }
+                //System.out.println(pos);
+
+                //System.out.println(div*i);
+                workers.add(new BoyerMoore(this, word,div*i,div*(i+1),pos));
+            }
+
+            if(div*(n)<len){
+                workers.get(workers.size()-1).setTo(len);
+            }
+
+
+
+            for(int i=0; i< n; i++){
+                list.add( executor.submit(workers.get(i)));
+                //pos += lines[i].length() + 2; // \n kodowany jako 2 znaki
+            }
+
+            for(Future<ArrayList<Result.row>> fut : list)
+                try { positions.addAll(fut.get()); }  catch (InterruptedException | ExecutionException e) {}
+
+
+            Result x = new Result(34, data.filename, data.folder);
+            x.positions = positions;
+
+            //System.out.println("-- "+positions);
+
+
+            return x;
+        }
+
+
+
+
+        public String getFolder() {
+            return data.folder;
+        }
+    public String [] getLines() {
+        return data.data;
+    }
+
+        public String getFilename() {
+            return data.filename;
+        }
+
     }
 
 
-    public String[] getData() {
-        return lines;
-    }
-
-    public String getFolder() {
-        return folder;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-}

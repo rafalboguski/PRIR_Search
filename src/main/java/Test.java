@@ -11,34 +11,36 @@ public class Test {
 
     public static void main(String[] argv) throws InterruptedException {
 
+
         Controller con = new Controller();
 
-        // liczba ksiazek jako parametr
-        populate(con, 1000);
+        con.addBook("a","Ala\n ma kota Toma","sdf");
+        ///con.addBook("b","Ala\n ma kota Bena","sdf");
+       // con.addBook("c","Ala\n ma kota Eda","sdf");
 
-        ArrayDeque<Result> wyn = null;
 
-        Random ran = new Random();
 
-        // w petli robie szukanie
-        // dla jedego nie jest stabilne
-        // najpierw musi sie rozkrecic
-        // wtedy widac efekty zrownoleglenia
+        print(con,"Toma");
 
-        for (int i = 0; i < 250; i++) {
-
-            wyn = con.search("noc");
-            int match = 0;
-            for (Result r : wyn) {
-                match += r.positions.size();
-                System.out.println(r.positions.toString()); // wypisanie wynikow
-
-            }
-            System.out.println("Found: " + match); //wypisanie liczby znalezionych wystapien
-
-        }
     }
 
+    private static void print(Controller con, String o){
+        //System.out.println("Search --------"+o);
+        try {
+            ArrayDeque<Result> ds = con.search(o);
+            System.out.println(ds.size());
+            for(Result r: ds) {
+                System.out.println(r.filename);
+                System.out.println(r.positions);
+            }
+
+
+
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        //System.out.println("-------------");
+    }
 
     static void populate(Controller controller, int BOOKS_NUM) {
 
