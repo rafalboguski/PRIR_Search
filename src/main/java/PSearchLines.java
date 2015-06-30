@@ -1,16 +1,58 @@
-/**
- * Created by monum_000 on 2015-06-01.
- */
 import java.util.*;
+import java.util.concurrent.Callable;
 
-public class BoyerMoore {
 
-    private ArrayList<Result.row> matches;
-    public BoyerMoore(String pattern, String text, int lineAt){
-        this.matches = match(pattern,text,lineAt);
+public class PSearchLines implements Callable<ArrayList<Result.row>> {
+
+    private Book book = null;
+    private String word = null;
+    /*
+        from and to are variables that restrict range of book in which this particular search is done
+        pos is position of found match from beginning of whole text
+     */
+    private int from;
+    private int to;
+    private int pos;
+
+
+    public PSearchLines(Book book, String word, int from, int to, int pos) {
+        this.book = book;
+        this.word = word;
+        this.from = from;
+        this.to = to;
+        this.pos = pos;
     }
 
-    public ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+
+    /*
+        Returns Array of matches (Result.row)
+     */
+    @Override
+    public ArrayList<Result.row> call() {
+
+        ArrayList<Result.row> buf = new ArrayList<>();
+        for (int i = from; i < to; i++) {
+
+            ArrayList<Result.row> tmp = match(word, book.getLines()[i], i);
+
+            for (Result.row match : tmp)
+                match.pos = pos;
+
+            buf.addAll(tmp);
+
+            pos += book.getLines()[i].length() + 2;
+        }
+
+        return buf;
+    }
+
+
+    /*
+        Boyer–Moore string search algorithm
+     */
+
+    private ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+
         ArrayList<Result.row> matches = new ArrayList<>();
         int texLen = text.length();
         int patLen = pattern.length();
@@ -34,17 +76,17 @@ public class BoyerMoore {
                     break;
 
                 } else if (indexInPattern == 0) {
-                    Result.row buf = new Result.row(lineAt+1, alignedAt);
+                    Result.row buf = new Result.row(lineAt + 1, alignedAt);
                     matches.add(buf);
                     alignedAt++;
                 }
 
             }
         }
-
         return matches;
     }
-    private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern){
+
+    private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern) {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = pattern.length() - 1; i >= 0; i--) {
             char c = pattern.charAt(i);
@@ -54,21 +96,8 @@ public class BoyerMoore {
     }
 
 
-    public static void main(String[] args) {
-      /*  List<Integer> matches = BoyerMoore.match("Ala ", "Ala ma kota, kot ma Ala");
-        List<Integer> matches2 = BoyerMoore.match(" Ala ", "Ala ma kota, kot ma Ala");
-        List<Integer> matches3 = BoyerMoore.match(" Ala", "Ala ma kota, kot ma Ala");
-        System.out.println(matches.toString());
-        System.out.println(matches2.toString());
-        System.out.println(matches3.toString());
-        matches.addAll(BoyerMoore.match(" Ala", "Ala ma kota, kot ma Ala"));
-        System.out.println(matches.toString());
-        for (Integer integer : matches) System.out.println("Match at: " + integer);
-        //System.out.println((matches.equals(Arrays.asList(1, 3)) ? "OK" : "Failed")); */
-    }
-
-    public ArrayList<Result.row> getMatches() {
-        return matches;
+    public void setTo(int to) {
+        this.to = to;
     }
 
 

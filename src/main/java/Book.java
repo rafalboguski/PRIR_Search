@@ -1,55 +1,89 @@
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Date;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class Book {
 
-    private String filename;
-    private String[] lines;
-    private String folder;
+    /*
+        fields were extracted for smooth json parsing
+     */
+    public class Data {
+
+        private String filename;
+        private String[] data;
+        private String folder;
+
+        public Data(String filename, String[] lines, String folder) {
+            this.filename = filename;
+            this.data = lines;
+            this.folder = folder;
+        }
+    }
+
+
+    private Data data;
+    private ExecutorService executor = Executors.newCachedThreadPool();
+
 
     public Book(String filename, String data, String folder) {
-        this.filename = filename;
-        this.lines = data.split(System.getProperty("line.separator"));
-        this.folder = folder;
+        this.data = new Data(filename, data.split(System.getProperty("line.separator")), folder);
     }
 
 
+    /*
+        Uses PSearchLines to get all positions of word in text and then contacts them into single
+        Result object
+     */
     public Result search(String word) {
 
-        // To jest moje proste szukanie
-        // Zrob tutaj jakis szybki algorytm to szukanie wzorcu (word) w tekscie (data albo lines)
-        Date id = new Date();
-        Result x = new Result(id.getTime(), this.filename, this.folder);
-        boolean init = false;
-        int pos = 0;
-        for (int i = 0; i < lines.length; i++) {
-            BoyerMoore buf1 = new BoyerMoore(word, lines[i], i);
-            ArrayList<Result.row> buf = buf1.getMatches();
-            for (Result.row match : buf){
-                match.pos+=pos;
-            }
-            x.addPosition(buf);
+        // Scattering lines of text to n jobs, needs to be redone
 
-            // \n kodowany jako 2 znaki w windowsie
-            // linuks jako 1 znak
-            pos+=lines[i].length()+2;
+        int n = Runtime.getRuntime().availableProcessors();
+        int len = getLines().length;
+        int div = (int) ((float) len / (float) (n));
+
+        ArrayList<PSearchLines> workers = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+
+            int pos = 0;
+            for (int j = 0; j < getLines().length && j < div * i; j++) {
+                pos += getLines()[j].length();
+            }
+
+            workers.add(new PSearchLines(this, word, div * i, div * (i + 1), pos));
         }
 
-        return x;
+        if (div * (n) < len) {
+            workers.get(workers.size() - 1).setTo(len);
+        }
+
+        // ---
+
+
+        ArrayList<Result.row> positions = new ArrayList<Result.row>();
+        List<Future<ArrayList<Result.row>>> list = new ArrayList<Future<ArrayList<Result.row>>>();
+
+
+        // Parallel begin
+        for (int i = 0; i < n; i++) {
+            list.add(executor.submit(workers.get(i)));
+        }
+
+        for (Future<ArrayList<Result.row>> fut : list)
+            try { positions.addAll(fut.get()); }
+            catch (InterruptedException | ExecutionException e) {System.err.println(e);}
+        // Parallel end
+
+        return new Result(0, data.filename, data.folder,positions);
     }
 
 
-    public String[] getData() {
-        return lines;
+    public String[] getLines() {
+        return data.data;
     }
-
-    public String getFolder() {
-        return folder;
-    }
-
-    public String getFilename() {
-        return filename;
+    public Data getData() {
+        return this.data;
     }
 
 }
+
+
