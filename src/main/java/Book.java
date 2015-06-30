@@ -30,22 +30,12 @@ public class Book {
                 match.pos+=pos;
             }
             x.addPosition(buf);
-            // \n kodowany jako 2 znaki
+
+            // \n kodowany jako 2 znaki w windowsie
+            // linuks jako 1 znak
             pos+=lines[i].length()+2;
         }
 
-
-        //////////////////////////////////////////////////////////
-        //  to jest do testowania zrownoleglenia
-        //  wykonuje sie prawie w takim samym czsie dla kazej ksiazki
-        //  jak bedziesz robil szukanie to zakomentuj
-        /*Random r = new Random();
-        int x =0;
-        for( int i =0;i<1000;i++){
-            x+=r.nextInt();
-        }
-        return new Result(Integer.parseInt(filename),String.valueOf(x),"sdf");
-        ////////////////////////////////////////////////////////// */
         return x;
     }
 

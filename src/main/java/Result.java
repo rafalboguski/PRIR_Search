@@ -35,7 +35,10 @@ public class Result {
     public void addPosition(int line, int pos){
         positions.add(new row(line, pos));
     }
-    public void addPosition(ArrayList<row> r ){positions.addAll(r);}
+    public void addPosition(ArrayList<row> r ){
+        positions.addAll(r);
+    }
+
     @Override
     public String toString() {
         return "Result{" +

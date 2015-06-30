@@ -15,17 +15,18 @@ public class Controller {
         for (int i = 0; i < DATA_DIVIDER; i++)
             books[i] = new ArrayList<>();
 
-        executor = Executors.newCachedThreadPool(); // tutaj mozna sie bawic roznymi rodzajami executorow casched imo najlepszy
+        executor = Executors.newCachedThreadPool();
     }
-
 
     private int DATA_DIVIDER = 44; // Liczba ksiazek/DATA_DIVIDER = ksiazka w jednym zadaniu do pool-a
     private int THREADS_NUM = 4;  // tylko do testow innych executorow newCachedThreadPool daje zawsze max ilosc watkow
 
     private ArrayList<Book>[] books;
     private ArrayDeque<Result> results;
-
     private int adding_quee_id = 0;
+
+    private ExecutorService executor;
+    private List<Future<ArrayDeque<Result>>> list;
 
     synchronized public void addBook(String filename, String data, String folder) {
         books[adding_quee_id++].add(new Book(filename,data,folder));
@@ -40,25 +41,22 @@ public class Controller {
         return result;
     }
 
-    ExecutorService executor;
-    List<Future<ArrayDeque<Result>>> list;
     synchronized public ArrayDeque<Result> search(String word) throws InterruptedException {
 
         results = new ArrayDeque<Result>();
-
         list = new ArrayList<Future<ArrayDeque<Result>>>();
-        long join = System.currentTimeMillis();
 
-        for(int i=0; i< DATA_DIVIDER; i++){
-            list.add( executor.submit(new Seeker(books[i], word)));
+        for(int i=0; i< DATA_DIVIDER; i++) {
+            list.add(executor.submit(new Seeker(books[i], word)));
         }
 
-        for(Future<ArrayDeque<Result>> fut : list)
-            try { results.addAll(fut.get()); } catch (InterruptedException | ExecutionException e) {}
-
-
-        //System.out.println((System.currentTimeMillis() - join));
-
+        for (Future<ArrayDeque<Result>> fut : list) {
+            try {
+                results.addAll(fut.get());
+            } catch (InterruptedException | ExecutionException e) {
+                System.err.println(e);
+            }
+        }
         return results;
     }
 
