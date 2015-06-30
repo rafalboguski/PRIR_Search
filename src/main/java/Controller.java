@@ -53,7 +53,7 @@ public class Controller {
         long join = System.currentTimeMillis();
 
         for(int i=0; i< DATA_DIVIDER; i++){
-            list.add( executor.submit(new Seeker(books[i], word)));
+            list.add( executor.submit(new PSearchBook(books[i], word)));
         }
 
         for(Future<ArrayDeque<Result>> fut : list)

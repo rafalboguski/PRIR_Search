@@ -7,10 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79c86171-6da2-4ce0-88d6-fff3d93bb787" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\IDEA\PRIR_Search\src\main\java\Test.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\IDEA\PRIR_Search\src\main\java\BoyerMoore.java" afterPath="$PROJECT_DIR$/src/main/java/PSearchLines.java" />
+      <change type="MOVED" beforePath="C:\IDEA\PRIR_Search\src\main\java\Seeker.java" afterPath="$PROJECT_DIR$/src/main/java/PSearchBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Book.java" afterPath="$PROJECT_DIR$/src/main/java/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/BoyerMoore.java" afterPath="$PROJECT_DIR$/src/main/java/BoyerMoore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Test.java" afterPath="$PROJECT_DIR$/src/main/java/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Result.java" afterPath="$PROJECT_DIR$/src/main/java/Result.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/View.java" afterPath="$PROJECT_DIR$/src/main/java/View.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,12 +37,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="55" />
-              <folding />
+            <state vertical-scroll-proportion="0.77878106">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1129#1130#0" expanded="true" />
+                <element signature="e#1177#1178#0" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
+                <element signature="e#1260#1261#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,41 +63,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.506772">
-              <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+            <state vertical-scroll-proportion="-42.714287">
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#823#835#0" expanded="true" />
-                <element signature="e#907#938#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
-                <element signature="e#2343#2344#0" expanded="true" />
+                <element signature="class#Data#0;class#Book#0" expanded="false" />
+                <element signature="e#1639#1651#0" expanded="true" />
+                <element signature="e#1719#1750#0" expanded="true" />
+                <element signature="e#2211#2212#0" expanded="true" />
+                <element signature="e#2243#2244#0" expanded="true" />
+                <element signature="e#2271#2272#0" expanded="true" />
+                <element signature="e#2303#2304#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seeker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Seeker.java">
+      <file leaf-file-name="PSearchBook.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PSearchBook.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoyerMoore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+      <file leaf-file-name="PSearchLines.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.857142">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-                <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+                <element signature="e#2953#2954#0" expanded="true" />
+                <element signature="e#2981#2982#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,21 +119,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Result.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="class#row#0;class#Result#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-              <folding>
-                <element signature="method#populate#0;class#Test#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -145,6 +143,12 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -155,13 +159,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Seeker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/SeekerByLines.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/BoyerMoore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PSearchBook.java" />
+        <option value="$PROJECT_DIR$/src/main/java/PSearchLines.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Result.java" />
         <option value="$PROJECT_DIR$/src/main/java/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View.java" />
       </list>
     </option>
   </component>
@@ -255,9 +261,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,9 +297,9 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="BoyerMoore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PSearchLines" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="BoyerMoore" />
+      <option name="MAIN_CLASS_NAME" value="PSearchLines" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -856,14 +862,14 @@
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.BoyerMoore" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PSearchLines" />
       <item index="2" class="java.lang.String" itemvalue="Application.View" />
     </list>
     <recent_temporary>
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.View" />
         <item index="1" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="2" class="java.lang.String" itemvalue="Application.BoyerMoore" />
+        <item index="2" class="java.lang.String" itemvalue="Application.PSearchLines" />
       </list>
     </recent_temporary>
   </component>
@@ -887,7 +893,8 @@
       <workItem from="1435085149614" duration="1261000" />
       <workItem from="1435086468077" duration="10876000" />
       <workItem from="1435098507319" duration="492000" />
-      <workItem from="1435682633388" duration="407000" />
+      <workItem from="1435682633388" duration="965000" />
+      <workItem from="1435683759603" duration="2243000" />
     </task>
     <task id="LOCAL-00001" summary="REST get method">
       <created>1433711650029</created>
@@ -901,11 +908,17 @@
       <option name="project" value="LOCAL" />
       <updated>1435083548991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Parallel computing by lines in files text fields">
+      <created>1435683156188</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1435683156188</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17053000" />
+    <option name="totallyTimeSpent" value="19854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -922,28 +935,28 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934782" sideWeight="0.49785638" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.73913044" sideWeight="0.5021436" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934782" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55326086" sideWeight="0.49249732" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.73913044" sideWeight="0.49785638" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20578778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20578778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973205" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47391304" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934782" sideWeight="0.49785638" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55326086" sideWeight="0.49249732" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47391304" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -985,7 +998,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="REST get method" />
     <MESSAGE value="Cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaning" />
+    <MESSAGE value="Parallel computing by lines in files text fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parallel computing by lines in files text fields" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -998,21 +1012,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Seeker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
@@ -1020,14 +1020,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1050,21 +1049,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1082,15 +1077,18 @@
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Seeker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
@@ -1098,14 +1096,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1128,21 +1125,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1160,15 +1153,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Seeker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="59" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="59" />
@@ -1176,14 +1172,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1198,21 +1193,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="67" selection-start-line="63" selection-start-column="67" selection-end-line="63" selection-end-column="67" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,22 +1221,24 @@
           <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1256,16 +1249,6 @@
           <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
           <folding>
             <element signature="class#row#0;class#Result#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1274,7 +1257,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1292,22 +1281,24 @@
           <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1318,16 +1309,6 @@
           <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
           <folding>
             <element signature="class#row#0;class#Result#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="64" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1336,7 +1317,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="4" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,22 +1333,24 @@
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1376,12 +1365,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1390,34 +1383,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1437,31 +1408,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Result.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <element signature="class#row#0;class#Result#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Seeker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-          <folding>
-            <element signature="method#populate#0;class#Test#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1473,36 +1424,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BoyerMoore.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/PSearchLines.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.857142">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#2953#2954#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Result.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="class#row#0;class#Result#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-42.714287">
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#match#0;class#BoyerMoore#0" expanded="false" />
-            <element signature="method#preprocessForBadCharacterShift#0;class#BoyerMoore#0" expanded="false" />
+            <element signature="class#Data#0;class#Book#0" expanded="false" />
+            <element signature="e#1639#1651#0" expanded="true" />
+            <element signature="e#1719#1750#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="e#2271#2272#0" expanded="true" />
+            <element signature="e#2303#2304#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.506772">
-          <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.77878106">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#823#835#0" expanded="true" />
-            <element signature="e#907#938#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1177#1178#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
           </folding>
         </state>
       </provider>

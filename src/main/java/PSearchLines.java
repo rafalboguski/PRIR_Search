@@ -1,17 +1,21 @@
-
 import java.util.*;
 import java.util.concurrent.Callable;
 
-public class BoyerMoore implements Callable<ArrayList<Result.row>> {
 
+public class PSearchLines implements Callable<ArrayList<Result.row>> {
 
     private Book book = null;
     private String word = null;
+    /*
+        from and to are variables that restrict range of book in which this particular search is done
+        pos is position of found match from beginning of whole text
+     */
     private int from;
     private int to;
     private int pos;
 
-    public BoyerMoore(Book book, String word,int from,int  to, int pos) {
+
+    public PSearchLines(Book book, String word, int from, int to, int pos) {
         this.book = book;
         this.word = word;
         this.from = from;
@@ -19,27 +23,35 @@ public class BoyerMoore implements Callable<ArrayList<Result.row>> {
         this.pos = pos;
     }
 
+
+    /*
+        Returns Array of matches (Result.row)
+     */
     @Override
     public ArrayList<Result.row> call() {
 
         ArrayList<Result.row> buf = new ArrayList<>();
-
         for (int i = from; i < to; i++) {
 
-            ArrayList<Result.row> ttt = match(word, book.getLines()[i], i);
-            for (Result.row match : ttt){
-                match.pos=pos;
-            }
+            ArrayList<Result.row> tmp = match(word, book.getLines()[i], i);
 
-            buf.addAll(ttt);
+            for (Result.row match : tmp)
+                match.pos = pos;
 
-            pos+=book.getLines()[i].length()+2;
+            buf.addAll(tmp);
+
+            pos += book.getLines()[i].length() + 2;
         }
+
         return buf;
     }
 
 
-    private  ArrayList<Result.row> match(String pattern, String text, int lineAt) {
+    /*
+        Boyer–Moore string search algorithm
+     */
+
+    private ArrayList<Result.row> match(String pattern, String text, int lineAt) {
 
         ArrayList<Result.row> matches = new ArrayList<>();
         int texLen = text.length();
@@ -64,7 +76,7 @@ public class BoyerMoore implements Callable<ArrayList<Result.row>> {
                     break;
 
                 } else if (indexInPattern == 0) {
-                    Result.row buf = new Result.row(lineAt+1, alignedAt);
+                    Result.row buf = new Result.row(lineAt + 1, alignedAt);
                     matches.add(buf);
                     alignedAt++;
                 }
@@ -73,7 +85,8 @@ public class BoyerMoore implements Callable<ArrayList<Result.row>> {
         }
         return matches;
     }
-    private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern){
+
+    private static Map<Character, Integer> preprocessForBadCharacterShift(String pattern) {
         Map<Character, Integer> map = new HashMap<>();
         for (int i = pattern.length() - 1; i >= 0; i--) {
             char c = pattern.charAt(i);
@@ -81,7 +94,6 @@ public class BoyerMoore implements Callable<ArrayList<Result.row>> {
         }
         return map;
     }
-
 
 
     public void setTo(int to) {
