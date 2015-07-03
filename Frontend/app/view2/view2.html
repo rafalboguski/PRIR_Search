@@ -1,0 +1,19 @@
+<h1>List of files</h1>
+
+
+
+
+<div ng-controller="View2Ctrl" data-ng-init="init()">
+    <button class="btn btn-default" ng-click="init()">Load Friends</button>
+
+
+        <div class="row well" ng-repeat="friend in friends">
+            <ul>
+                <li>{{friend.filename}}</li>
+                <li>{{friend.data}}</li>
+                <li>{{friend.folder}}</li>
+            </ul>
+
+        </div>
+
+</div>
