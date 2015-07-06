@@ -1,0 +1,27 @@
+<h1>List of files</h1>
+
+
+
+
+<div ng-controller="BooksCtrl" data-ng-init="init()">
+
+
+
+
+        <li class="book_list" ng-click="collapsed=!collapsed" ng-repeat="book in books">
+          <div class="todo-icon fui-document"></div>
+          <div class="todo-content">
+            <h4 class="todo-name">
+              {{book.filename}}
+            </h4>
+            {{book.folder}}
+          </div>
+
+          <div class="well" style="padding: 20px;margin: 20px" ng-show="collapsed">{{book.data}}</div>
+
+
+        </li>
+
+
+
+</div>

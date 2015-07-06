@@ -28,3 +28,23 @@
   content: "";
   padding: 0;
 }
+
+.row-element{
+
+  background-color: #98c0b2;
+  padding: 20px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+.book_list:hover {
+
+  background: transparent;
+
+
+}
+.book_list .fui-document:hover{
+  color: #1abc9c;
+}
+
+u
