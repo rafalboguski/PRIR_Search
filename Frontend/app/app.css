@@ -1,50 +1,19 @@
-/* app css stylesheet */
+body {
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
 }
 
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
-.row-element{
-
-  background-color: #98c0b2;
-  padding: 20px;
-  padding-left: 40px;
-  margin-bottom: 20px;
+.book_list {
+    background-color: #cccccc;
+    padding: 20px;
 }
 
 .book_list:hover {
 
-  background: transparent;
-
+    background-color: darkgray;
 
 }
-.book_list .fui-document:hover{
-  color: #1abc9c;
-}
 
-u
+.batch {
+    padding: 70px;
+    background-color:white ;
+}
