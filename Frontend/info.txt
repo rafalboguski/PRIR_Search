@@ -1,3 +1,5 @@
 
 
-boer install ng-animate ... dodaj do zaleznosci
+bower install ng-animate ... dodaj do zaleznosci
+
+bower install angular-bootstrap

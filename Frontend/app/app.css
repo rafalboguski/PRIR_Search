@@ -19,6 +19,22 @@ body {
 }
 
 
+
+
+.accordion-toggle{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*animate*/
 .mainview-animation.ng-enter {
     -webkit-transition: .3s linear all; /* Safari/Chrome */
     -moz-transition: .3s linear all; /* Firefox */
@@ -41,3 +57,6 @@ body {
     /* The animation code itself */
     opacity: 1;
 }
+
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
