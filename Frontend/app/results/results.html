@@ -3,25 +3,52 @@
 sdfsdfsdf
 
 
+<!--extract this to other controller-->
+
+<div ng-controller="ResultsCtrl" data-ng-init="init()">
+    <h4>
+        <input type="checkbox" ng-model="oneAtATime">
+        Open only one at a time
+    </h4>
+    <accordion close-others="oneAtATime">
+        <accordion-group ng-repeat="file in files">
+
+            <accordion-heading style="outline: 0;">
+
+                <h3>{{$index+1}}. {{file.filename}}
+                </h3>
+
+                <h4 style="margin-left: 50px;">
+                    <label class="small">/{{file.folder}}</label>
+                </h4>
+
+            </accordion-heading>
+
+            <h4 ng-repeat="res in file.positions">
+                {{res}}
+            </h4>
+
+        </accordion-group>
+    </accordion>
+</div>
+
+
 <div ng-controller="ResultsCtrl" data-ng-init="init()">
 
 
-
-
-        <li class="book_list" ng-click="collapsed=!collapsed" ng-repeat="file in files">
-          <div class="todo-icon fui-document"></div>
-          <div class="todo-content">
-            <h4 ng-repeat="res in file "class="todo-name">
-              {{res}}
+    <li class="book_list" ng-click="collapsed=!collapsed" ng-repeat="file in files">
+        <div class="todo-icon fui-document"></div>
+        <div class="todo-content">
+            <h4 ng-repeat="res in file " class="todo-name">
+                {{res.title}}
             </h4>
             <!--{{book.folder}}-->
-          </div>
+        </div>
 
-          <div class="well" style="padding: 20px;margin: 20px" ng-show="collapsed">{{book.data}}</div>
+        <div class="well" style="padding: 20px;margin: 20px" ng-show="collapsed">{{book.data}}</div>
 
 
-        </li>
-
+    </li>
 
 
 </div>
