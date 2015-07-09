@@ -2,8 +2,7 @@
     <h1>List of files</h1>
     <button class="btn big btn-success" data-toggle="modal" data-target="#addModal" ng-click="init()">Add</button>
     <button class="btn btn-warning" ng-click="init()">Reload</button>
-    <button class="btn btn-info" ng-click="init()">Search</button>
-
+    <a class="btn btn-info" href="#/results" ng-click="init()">Search</a>
 
 
     <div class="book_list row" ng-click="collapsed=!collapsed" ng-repeat="book in books">

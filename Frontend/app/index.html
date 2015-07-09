@@ -30,10 +30,9 @@
 
 <div class="container batch">
 
-
-
     <!-- Data List------------------------------>
-    <div class="row" ng-view></div>
+    <!--<div class="row flip" ng-view></div>-->
+    <div ng-view class="mainview-animation"></div>
     <!-- --------------------------------------->
 
 
@@ -48,8 +47,6 @@
 <script src="app.js"></script>
 <script src="results/results.js"></script>
 <script src="books/books.js"></script>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script >
 </body>
 </html>
