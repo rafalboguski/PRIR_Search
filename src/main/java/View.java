@@ -11,10 +11,17 @@ public class View {
 
         Controller controller = new Controller();
 
+        controller.addBook("Ala","Ala ma kota","ksiazki");
 
-        get("/files", (req, res) -> controller.getBooks(), json());
+        get("/files", (req, res) -> {
+            res.header("Access-Control-Allow-Origin","*");
+            return controller.getBooks();
+        }, json());
 
-        get("/search/:word", (req, res) -> controller.search(req.params(":word")), json());
+        get("/search/:word", (req, res) -> {
+            res.header("Access-Control-Allow-Origin", "*");
+            return controller.search(req.params(":word"));
+        }, json());
 
         /*
             curl -v -H "Accept: application/json" -H "Content-type: application/json" -X
@@ -30,6 +37,7 @@ public class View {
                     String.valueOf(json.get("folder"))
             );
 
+            res.header("Access-Control-Allow-Origin","*");
             // should return json but test want it to be this way
             return "<p>OK</p>";
         });
