@@ -36,7 +36,7 @@ public class PSearchLines implements Callable<ArrayList<Result.row>> {
             ArrayList<Result.row> tmp = match(word, book.getLines()[i], i);
 
             for (Result.row match : tmp)
-                match.pos = pos;
+                match.pos -= pos;
 
             buf.addAll(tmp);
 
