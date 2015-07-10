@@ -1,19 +1,11 @@
-
 <div ng-controller="ResultsCtrl" data-ng-init="init()">
 
-<h1>'{{word}}' found in {{files.length}} files</h1>
+    <h1>'{{word}}' found in {{files.length}} files</h1>
 
 
+    <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
-
-<!--extract this to other controller-->
-
-
-    <h4>
-        <input type="checkbox" ng-model="oneAtATime">
-        Open only one at a time
-    </h4>
-    <accordion ng-controller="ListCtrl" close-others="oneAtATime">
+    <accordion close-others="oneAtATime">
         <accordion-group ng-repeat="file in files">
 
             <accordion-heading style="outline: 0;">
@@ -37,9 +29,8 @@
 
         </accordion-group>
     </accordion>
+
 </div>
-
-
 
 
 </div>

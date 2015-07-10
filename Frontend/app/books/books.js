@@ -18,4 +18,14 @@ angular.module('myApp.books', ['ngRoute'])
             });
         }
 
+        $scope.search = function(){
+            $('#searchModal').modal('hide');
+
+
+            $timeout(function() {
+                $location.path('results/'+$scope.word);
+            }, 250); // delay 250 ms
+
+
+        }
     });

@@ -12,6 +12,7 @@ public class View {
         Controller controller = new Controller();
 
         controller.addBook("Ala","Ala ma kota","ksiazki");
+        controller.addBook("Przewodnik","Monako jest spoko","wycieczki");
 
         get("/files", (req, res) -> {
             res.header("Access-Control-Allow-Origin","*");

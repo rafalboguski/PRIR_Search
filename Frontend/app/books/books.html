@@ -5,11 +5,10 @@
     <a class="btn btn-info" data-toggle="modal" data-target="#searchModal">Search</a>
 
 
-    <h4>
-        <input type="checkbox" ng-model="oneAtATime">
-        Open only one at a time
-    </h4>
-    <accordion ng-controller="ListCtrl" close-others="oneAtATime">
+    <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
+
+    <accordion close-others="oneAtATime">
+
         <accordion-group ng-repeat="book in books">
 
             <accordion-heading style="outline: 0;">
@@ -32,7 +31,7 @@
 
 
     <!-- Modals -->
-    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div id="addModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -71,7 +70,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div id="searchModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,7 +86,7 @@
                             <label for="inputTitle" class="col-lg-2 control-label">Text</label>
 
                             <div class="col-lg-10">
-                                <input ng-model="word" class="form-control"  placeholder="in files content">
+                                <input ng-model="word" class="form-control" placeholder="in files content">
                             </div>
                         </div>
 
@@ -97,7 +96,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button class="btn btn-success"  ng-click="search()" style="width: 100px">Search</button>
+                    <button class="btn btn-success" ng-click="search()" style="width: 100px">Search</button>
                 </div>
             </div>
         </div>
