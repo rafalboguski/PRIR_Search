@@ -1,31 +1,31 @@
 'use strict';
 
-angular.module('myApp.books', ['ngRoute'])
+angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/books', {
-    templateUrl: 'books/books.html',
-    controller: 'BooksCtrl'
-  });
-}])
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/books', {
+            templateUrl: 'books/books.html',
+            controller: 'BooksCtrl'
+        });
+    }])
 
-.controller('BooksCtrl',function($scope,$http, $location, $timeout){
-        $scope.init = function(){
-            $http.get("http://localhost:4567/files").success(function(data){
-                $scope.books = data.reverse();
-            }).error(function(){
-                alert("Enable cross site refernece ");
+    .controller('BooksCtrl', function ($scope, $http, $location, $timeout, apiService, $window) {
+        $scope.init = function () {
+
+            apiService.getFiles().then(function (res) {
+                $scope.books = res.data.reverse();
             });
-        }
+        };
 
-        $scope.search = function(){
+        $scope.search = function () {
             $('#searchModal').modal('hide');
 
 
-            $timeout(function() {
-                $location.path('results/'+$scope.word);
+            $timeout(function () {
+                $location.path('results/' + $scope.word);
             }, 250); // delay 250 ms
 
 
-        }
+        };
     });
+

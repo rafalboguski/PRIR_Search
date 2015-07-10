@@ -34,7 +34,7 @@ body {
 
 
 
-/*animate*/
+/*animate view*/
 .mainview-animation.ng-enter {
     -webkit-transition: .3s linear all; /* Safari/Chrome */
     -moz-transition: .3s linear all; /* Firefox */
@@ -59,4 +59,5 @@ body {
 }
 
 
+/* angular-bootstrap required*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

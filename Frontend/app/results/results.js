@@ -10,14 +10,13 @@ angular.module('myApp.results', ['ngRoute'])
     }])
 
 
-    .controller('ResultsCtrl', function ($scope, $http, $routeParams, $rootScope) {
+    .controller('ResultsCtrl', function ($scope, $http, $routeParams, apiService) {
         $scope.init = function () {
-
 
             $scope.word = $routeParams.word;
 
-            $rootScope.GlobalService.Search($routeParams.word).then(function (response) {
-                $scope.files = response.data.reverse();
+            apiService.Search($routeParams.word).then(function (res) {
+                $scope.files = res.data.reverse();
             });
         }
     });
