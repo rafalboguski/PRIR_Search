@@ -1,4 +1,8 @@
 <div ng-controller="BooksCtrl" data-ng-init="init()">
+
+    <ol class="breadcrumb">
+        <li class="active">List of files</li>
+    </ol>
     <h1>List of files</h1>
     <button class="btn big btn-success" data-toggle="modal" data-target="#addModal">Add</button>
     <button class="btn btn-warning" ng-click="init()">Reload</button>
@@ -7,7 +11,7 @@
 
     <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
-    <accordion close-others="oneAtATime">
+    <accordion class="view-animate" close-others="oneAtATime">
 
         <accordion-group ng-repeat="book in books">
 
