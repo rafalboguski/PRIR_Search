@@ -2,14 +2,16 @@
 
     <ol class="breadcrumb">
         <li><a href="#/books">List of files</a></li>
-        <li class="active">search result/li>
+        <li class="active">search result</li>
     </ol>
 
     <h1>'{{word}}' found in {{files.length}} files</h1>
 
+    <div class="btn-group">
     <a class="btn btn-warning"  href="#/books">Return</a>
     <a class="btn btn-info"  href="#/books">Reload</a>
     <a class="btn btn-success"  href="#/books">Export to csv</a>
+        </div>
 
     <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
