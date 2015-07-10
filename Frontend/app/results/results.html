@@ -1,11 +1,14 @@
-<h1>List of files</h1>
 
-sdfsdfsdf
+<div ng-controller="ResultsCtrl" data-ng-init="init()">
+
+<h1>'{{word}}' found in {{files.length}} files</h1>
+
+
 
 
 <!--extract this to other controller-->
 
-<div ng-controller="ResultsCtrl" data-ng-init="init()">
+
     <h4>
         <input type="checkbox" ng-model="oneAtATime">
         Open only one at a time
@@ -25,7 +28,11 @@ sdfsdfsdf
             </accordion-heading>
 
             <h4 ng-repeat="res in file.positions">
-                {{res}}
+                <p>
+                    line:{{res.line}}
+                    position:{{res.pos}}
+
+                </p>
             </h4>
 
         </accordion-group>
@@ -33,22 +40,6 @@ sdfsdfsdf
 </div>
 
 
-<div ng-controller="ResultsCtrl" data-ng-init="init()">
-
-
-    <li class="book_list" ng-click="collapsed=!collapsed" ng-repeat="file in files">
-        <div class="todo-icon fui-document"></div>
-        <div class="todo-content">
-            <h4 ng-repeat="res in file " class="todo-name">
-                {{res.title}}
-            </h4>
-            <!--{{book.folder}}-->
-        </div>
-
-        <div class="well" style="padding: 20px;margin: 20px" ng-show="collapsed">{{book.data}}</div>
-
-
-    </li>
 
 
 </div>

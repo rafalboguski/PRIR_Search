@@ -9,7 +9,7 @@ angular.module('myApp.books', ['ngRoute'])
   });
 }])
 
-.controller('BooksCtrl',function($scope,$http){
+.controller('BooksCtrl',function($scope,$http, $location, $timeout){
         $scope.init = function(){
             $http.get("http://localhost:4567/files").success(function(data){
                 $scope.books = data.reverse();
@@ -17,6 +17,18 @@ angular.module('myApp.books', ['ngRoute'])
                 alert("Enable cross site refernece ");
             });
         }
+
+        $scope.search = function(){
+            $('#searchModal').modal('hide');
+
+
+            $timeout(function() {
+                $location.path('results/'+$scope.word);
+            }, 250); // delay 250 ms
+
+
+        }
+
 
         $scope.oneAtATime = true;
 
