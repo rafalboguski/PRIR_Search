@@ -13,7 +13,7 @@
         <input type="checkbox" ng-model="oneAtATime">
         Open only one at a time
     </h4>
-    <accordion close-others="oneAtATime">
+    <accordion ng-controller="ListCtrl" close-others="oneAtATime">
         <accordion-group ng-repeat="file in files">
 
             <accordion-heading style="outline: 0;">

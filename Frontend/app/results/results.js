@@ -9,15 +9,7 @@ angular.module('myApp.results', ['ngRoute'])
         });
     }])
 
-    .controller('ResultsCtrl', function ($scope, $http, $routeParams) {
-        $scope.init = function () {
-            $http.get("http://localhost:4567/search/"+$routeParams.word).success(function (data) {
-                $scope.word = $routeParams.word;
-                $scope.files = data.reverse();
-            }).error(function () {
-                alert("Enable cross site refernece ");
-            });
-        }
+    .controller('ListCtrl', function ($scope) {
 
         $scope.oneAtATime = true;
 
@@ -43,6 +35,18 @@ angular.module('myApp.results', ['ngRoute'])
             isFirstOpen: true,
             isFirstDisabled: false
         };
+    })
 
+
+
+.controller('ResultsCtrl', function ($scope, $http, $routeParams) {
+        $scope.init = function () {
+            $http.get("http://localhost:4567/search/"+$routeParams.word).success(function (data) {
+                $scope.word = $routeParams.word;
+                $scope.files = data.reverse();
+            }).error(function () {
+                alert("Enable cross site refernece ");
+            });
+        }
     });
 
