@@ -10,15 +10,14 @@ angular.module('myApp.results', ['ngRoute'])
     }])
 
 
-
-
-.controller('ResultsCtrl', function ($scope, $http, $routeParams) {
+    .controller('ResultsCtrl', function ($scope, $http, $routeParams, $rootScope) {
         $scope.init = function () {
-            $http.get("http://localhost:4567/search/"+$routeParams.word).success(function (data) {
-                $scope.word = $routeParams.word;
-                $scope.files = data.reverse();
-            }).error(function () {
-                alert("Enable cross site refernece ");
+
+
+            $scope.word = $routeParams.word;
+
+            $rootScope.GlobalService.Search($routeParams.word).then(function (response) {
+                $scope.files = response.data.reverse();
             });
         }
     });
