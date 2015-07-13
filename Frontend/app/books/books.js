@@ -27,5 +27,13 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
 
 
         };
+
+        $scope.addFile = function(){
+
+            apiService.addFile().then(function (res) {
+
+            });
+
+        };
     });
 

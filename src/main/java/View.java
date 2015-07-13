@@ -28,10 +28,11 @@ public class View {
             curl -v -H "Accept: application/json" -H "Content-type: application/json" -X
             POST -d '{"filename":"filename","data":"data","folder":"folder"}'  http://localhost:4567/push
         */
-        post("/push", (req, res) -> {
+        post("/push/", (req, res) -> {
+
+            System.out.println("PUSH" + req.body());
 
             JSONObject json = new JSONObject(new String(req.bodyAsBytes(), "UTF-8"));
-
             controller.addBook(
                     String.valueOf(json.get("filename")),
                     String.valueOf(json.get("data")),
