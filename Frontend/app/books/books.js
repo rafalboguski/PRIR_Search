@@ -9,7 +9,7 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
         });
     }])
 
-    .controller('BooksCtrl', function ($scope, $http, $location, $timeout, apiService, $window) {
+    .controller('BooksCtrl', function ($scope, $http, $location, $timeout, apiService) {
         $scope.init = function () {
 
             apiService.getFiles().then(function (res) {
@@ -20,7 +20,6 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
         $scope.search = function () {
             $('#searchModal').modal('hide');
 
-
             $timeout(function () {
                 $location.path('results/' + $scope.word);
             }, 250); // delay 250 ms
@@ -30,9 +29,12 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
 
         $scope.addFile = function(){
 
-            apiService.addFile().then(function (res) {
-
+            apiService.addFile($scope.addTitle, $scope.addContent,"df").then(function (res) {
+                $('#addModal').modal('hide');
+                $scope.init();
             });
+
+
 
         };
     });

@@ -25,14 +25,14 @@ angular.module('myApp', [
             return $http.get(apiUrl + '/files');
         };
 
-        this.addFile = function () {
+        this.addFile = function (title, content, folder) {
             return $http({
                 method: 'POST',
                 url: apiUrl + '/push/',
                 data: {
-                    'filename': '222',
-                    'data': 'sdfsdf',
-                    'folder': 'muminki'
+                    'filename': title,
+                    'data': content,
+                    'folder': folder
                 },
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             });
