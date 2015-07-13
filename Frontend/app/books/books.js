@@ -29,7 +29,7 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
 
         $scope.addFile = function(){
 
-            apiService.addFile($scope.addTitle, $scope.addContent,"df").then(function (res) {
+            apiService.addFile($scope.addTitle, $scope.addContent,$scope.addFolder).then(function (res) {
                 $('#addModal').modal('hide');
                 $scope.init();
             });
