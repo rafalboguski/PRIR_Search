@@ -14,6 +14,10 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
 
             apiService.getFiles().then(function (res) {
                 $scope.books = res.data.reverse();
+                // how to add new field
+                $scope.books.forEach(function (b) {
+                    b.tmp = 143;
+                });
             });
         };
 
@@ -30,12 +34,16 @@ angular.module('myApp.books', ['ngRoute', 'ngAnimate'])
         $scope.addFile = function(){
 
             apiService.addFile($scope.addTitle, $scope.addContent,$scope.addFolder).then(function (res) {
+                $scope.addTitle = "";
+                $scope.addContent = "";
+                $scope.addFolder = "";
                 $('#addModal').modal('hide');
                 $scope.init();
             });
-
-
-
+        };
+        $scope.expandLink = function(){
+            contentAreas[$scope.openAll? 'hide': 'show']()
+                .trigger($scope.openAll? 'hide': 'show');
         };
     });
 
