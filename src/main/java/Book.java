@@ -25,7 +25,7 @@ public class Book {
 
 
     public Book(String filename, String data, String folder) {
-        this.data = new Data(filename, data.split(System.getProperty("line.separator")), folder);
+        this.data = new Data(filename,data.split("\n"), folder);
     }
 
 
