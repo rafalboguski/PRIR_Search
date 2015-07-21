@@ -48,8 +48,9 @@ public class Controller {
     }
 
 
-    synchronized public ArrayDeque<Result> search(String word) throws InterruptedException {
+    synchronized public ResultWrapper search(String word) throws InterruptedException {
 
+        long searchTime = System.currentTimeMillis();
         results = new ArrayDeque<Result>();
         list = new ArrayList<Future<ArrayDeque<Result>>>();
 
@@ -64,6 +65,7 @@ public class Controller {
 
         // parallel end
 
-        return results;
+       // results
+        return new ResultWrapper(results,System.currentTimeMillis()-searchTime);
     }
 }
