@@ -20,7 +20,9 @@ public class View {
         }, json());
 
         get("/search/:word", (req, res) -> {
+            System.out.println(req.params(":word"));
             res.header("Access-Control-Allow-Origin", "*");
+            System.out.println(controller.search(req.params(":word")));
             return controller.search(req.params(":word"));
         }, json());
 
