@@ -68,4 +68,27 @@ public class Controller {
        // results
         return new ResultWrapper(results,System.currentTimeMillis()-searchTime);
     }
+
+    synchronized public Book getBook(int id) {
+        // todo can be O(1)
+        for (int i = 0; i < DATA_DIVIDER; i++) {
+            for (Book b : books[i]) {
+                if(b.getId()==id){
+                   return b;
+                }
+            }
+        }
+        return null;
+    }
+
+    public Object getBookLine(int bookId, int lineNumber) {
+        Book b = getBook(bookId);
+        if (b != null) {
+            try {
+                return b.getLine(lineNumber);
+            } catch (ArrayIndexOutOfBoundsException e) {
+                return null;
+            }
+        } else return null;
+    }
 }

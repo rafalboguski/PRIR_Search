@@ -3,11 +3,20 @@ import java.util.concurrent.*;
 
 public class Book {
 
+    public int getId() {
+        return data.id;
+    }
+
+    public String getLine(int lineNumber) {
+        return data.data[lineNumber];
+    }
+
     /*
-        fields were extracted for smooth json parsing
-     */
+            fields were extracted for smooth json parsing
+         */
     public class Data {
 
+        private int id;
         private String filename;
         private String[] data;
         private String folder;
@@ -20,12 +29,15 @@ public class Book {
     }
 
 
+    private static int Global_id = 0;
     private Data data;
     private ExecutorService executor = Executors.newCachedThreadPool();
 
 
     public Book(String filename, String data, String folder) {
         this.data = new Data(filename,data.split("\n"), folder);
+        this.data.id = Global_id;
+        Global_id+=1;
     }
 
 

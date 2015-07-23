@@ -26,6 +26,13 @@ public class View {
             return controller.search(req.params(":word"));
         }, json());
 
+        get("/files/:id/:line", (req, res) -> {
+
+            res.header("Access-Control-Allow-Origin", "*");
+
+            return controller.getBookLine(Integer.valueOf(req.params(":id")), Integer.valueOf(req.params(":line")));
+        }, json());
+
         /*
             curl -v -H "Accept: application/json" -H "Content-type: application/json" -X
             POST -d '{"filename":"filename","data":"data","folder":"folder"}'  http://localhost:4567/push
@@ -50,6 +57,10 @@ public class View {
 
 
     public static String toJson(Object object) {
+        if(object instanceof String){
+            return "{\"data\":\""+object.toString()+"\"}";
+        }
+
         return new Gson().toJson(object);
     }
 
