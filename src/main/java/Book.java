@@ -85,7 +85,7 @@ public class Book {
             catch (InterruptedException | ExecutionException e) {System.err.println(e);}
         // Parallel end
 
-        return new Result(0, data.filename, data.folder,positions);
+        return new Result(data.id, data.filename, data.folder,positions);
     }
 
 

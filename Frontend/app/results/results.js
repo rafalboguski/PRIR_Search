@@ -2,7 +2,8 @@
 
 var app = angular.module('myApp.results', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.bootstrap'
 ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -14,6 +15,8 @@ var app = angular.module('myApp.results', [
 
 
     .controller('ResultsCtrl', function ($scope, $http, $routeParams, apiService) {
+
+
         $scope.init = function () {
             $scope.word = $routeParams.word;
 
@@ -38,6 +41,14 @@ var app = angular.module('myApp.results', [
         $scope.loadMoreResult = function (idx) {
             $scope.files[idx].limit += 24;
             console.log('Result.js: ','renderResult-Load_More ', idx);
+        };
+
+        $scope.book_line = "Loading ...";
+        $scope.getBookLine = function (book_id, line_number){
+            apiService.getBookLine(book_id, line_number).then(function (res) {
+                console.log('Line',book_id," ",line_number,"  ", res.data);
+                $scope.book_line = res.data.data;
+            });
         }
     }
 );

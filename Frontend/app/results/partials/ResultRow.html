@@ -14,26 +14,29 @@
     </div>
 </accordion-heading>
 
-<div class="panel panel-default" style="display: inline-block;width: 238px;margin: 5px;"
-     ng-animate="'animate'" ng-repeat="res in file.rrr | orderBy:prop | filter:query | limitTo:file.limit">
+<button class="panel panel-default hvr-border-fade"
+        ng-repeat="res in file.rrr | orderBy:prop | filter:query | limitTo:file.limit"
+        ng-mouseover="getBookLine(file.id, res.line)"
+        popover="{{book_line}}" popover-trigger="mouseenter"
+        style="display: inline-block;width: 238px;margin: 5px;">
 
     <div class="panel-body">
         line:{{res.line}}
         position:{{res.pos}}
     </div>
 
-</div>
+</button>
 <br/>
 
 <div class="col-md-7">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
             <a class="btn btn-info" ng-click="loadMoreResult($index)">
-                <span class="glyphicon glyphicon-triangle-left"></span> Load more
+                <span class=""></span> Load more
                 {{file.limit}}/{{file.positions.length}}</a>
         </div>
         <div class="btn-group" role="group">
-            <a class="btn btn-warning" href="#/books"><span class="glyphicon glyphicon-refresh"></span> Load less</a></div>
+            <a class="btn btn-warning" href="#/books"><span class=""></span> Load less</a></div>
         <div class="btn-group" role="group">
             <a class="btn btn-danger" href="#/books"><span class=""></span> Collapse</a></div>
     </div>

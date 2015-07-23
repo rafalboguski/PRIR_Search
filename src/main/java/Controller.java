@@ -85,7 +85,7 @@ public class Controller {
         Book b = getBook(bookId);
         if (b != null) {
             try {
-                return b.getLine(lineNumber);
+                return b.getLine(lineNumber-1);
             } catch (ArrayIndexOutOfBoundsException e) {
                 return null;
             }

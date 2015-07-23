@@ -27,6 +27,10 @@ var app = angular.module('myApp', [
             return $http.get(apiUrl + '/files');
         };
 
+        this.getBookLine = function(book_id, line){
+            return $http.get(apiUrl + '/files/'+book_id+"/"+line);
+        };
+
         this.addFile = function (title, content, folder) {
             return $http({
                 method: 'POST',
