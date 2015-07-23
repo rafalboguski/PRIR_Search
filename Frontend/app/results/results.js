@@ -1,7 +1,8 @@
 'use strict';
 
-var app = angular.module('myApp.results', ['ngRoute',
-    'angularUtils.directives.dirPagination'
+var app = angular.module('myApp.results', [
+    'ngRoute',
+    'ngAnimate'
 ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -25,16 +26,18 @@ var app = angular.module('myApp.results', ['ngRoute',
             });
         };
 
-        $scope.loadResultContent = function (idx) {
+        $scope.renderResultContent = function (idx) {
             if (!$scope.files[idx].open) {
                 $scope.files[idx].limit = 12;
                 $scope.files[idx].rrr = $scope.files[idx].positions;
                 $scope.files[idx].open = true;
+                console.log('Result.js: ','renderResult ', idx);
             }
         };
 
         $scope.loadMoreResult = function (idx) {
-            $scope.files[idx].limit += 12;
+            $scope.files[idx].limit += 24;
+            console.log('Result.js: ','renderResult-Load_More ', idx);
         }
     }
 );

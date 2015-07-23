@@ -1,0 +1,40 @@
+<accordion-heading style="outline: 0;">
+    <div class="row">
+        <div class="col-md-11">
+            <h3>{{$index+1}}. {{file.filename}}
+            </h3>
+
+            <h4 style="margin-left: 50px;">
+                <label class="small">/{{file.folder}}</label>
+            </h4>
+        </div>
+        <div class="col-md-1 h1">
+            <span class="badge" style="font-size: 18px;">{{file.positions.length}}</span>
+        </div>
+    </div>
+</accordion-heading>
+
+<div class="panel panel-default" style="display: inline-block;width: 238px;margin: 5px;"
+     ng-animate="'animate'" ng-repeat="res in file.rrr | orderBy:prop | filter:query | limitTo:file.limit">
+
+    <div class="panel-body">
+        line:{{res.line}}
+        position:{{res.pos}}
+    </div>
+
+</div>
+<br/>
+
+<div class="col-md-7">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+            <a class="btn btn-info" ng-click="loadMoreResult($index)">
+                <span class="glyphicon glyphicon-triangle-left"></span> Load more
+                {{file.limit}}/{{file.positions.length}}</a>
+        </div>
+        <div class="btn-group" role="group">
+            <a class="btn btn-warning" href="#/books"><span class="glyphicon glyphicon-refresh"></span> Load less</a></div>
+        <div class="btn-group" role="group">
+            <a class="btn btn-danger" href="#/books"><span class=""></span> Collapse</a></div>
+    </div>
+</div>
