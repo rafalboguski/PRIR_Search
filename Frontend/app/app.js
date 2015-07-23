@@ -1,39 +1,20 @@
 'use strict';
 
 
-angular.module('myApp', [
+var app = angular.module('myApp', [
     'ngRoute',
+    'angularUtils.directives.dirPagination',
     'myApp.results',
     'myApp.books',
     'myApp.utils',
     'ngAnimate',
     'ui.bootstrap'
-]).
-    config(['$routeProvider', function ($routeProvider) {
+])
+
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/books'});
     }])
 
-
-    .service('myService', function ($http) {
-        var myData = null;
-
-        var promise = $http.get('http://localhost:4567' + '/search/' + 'a').success(function (data) {
-            myData = data;
-        });
-
-        return {
-            promise: promise,
-            setData: function (data) {
-                console.log('SetData: ');
-                myData = data;
-
-            },
-            doStuff: function () {
-                console.log('DoStuff: ',myData);
-                return myData;//.getSomeData();
-            }
-        };
-    })
 
     .service('apiService', function ($http) {
 
@@ -41,20 +22,9 @@ angular.module('myApp', [
 
         this.Search = function (word) {
             return $http.get(apiUrl + '/search/' + word);
-
-            //return $q(function(resolve, reject) {
-            //    setTimeout(function() {
-            //        if (word) {
-            //            resolve('Hello, ' + word + '!');
-            //        } else {
-            //            reject('Greeting ' + word + ' is not allowed.');
-            //        }
-            //    }, 5000);
-            //});
         };
         this.getFiles = function () {
             return $http.get(apiUrl + '/files');
-
         };
 
         this.addFile = function (title, content, folder) {
@@ -72,6 +42,7 @@ angular.module('myApp', [
 
     })
 
+    // ng repeat convenient range
     .filter('makeRange', function () {
         return function (input) {
             var lowBound, highBound;
