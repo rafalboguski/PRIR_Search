@@ -1,7 +1,7 @@
 <div ng-controller="ResultsCtrl" data-ng-init="init()">
 
 
-<ol class="breadcrumb">
+    <ol class="breadcrumb">
         <li><a href="#/books">List of files</a></li>
         <li class="active">search result</li>
     </ol>
@@ -21,56 +21,20 @@
 
     <!--<progressbar class="progress-striped active" value="100" >info </progressbar>-->
     <!--<div >-->
-        <!--<progressbar class="progress-striped active" value="100" >info </progressbar>-->
+    <!--<progressbar class="progress-striped active" value="100" >info </progressbar>-->
     <!--</div>-->
 
-    <div >
-        <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
-        <accordion close-others="oneAtATime">
-            <accordion-group is-open="group.open"  ng-repeat="file in files" ng-click="loadResultContent($index)">
+    <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
-                <accordion-heading style="outline: 0;">
-                    <div class="row">
-                        <div class="col-md-11">
-                            <h3>{{$index+1}}. {{file.filename}}
-                            </h3>
+    <accordion close-others="oneAtATime">
+        <accordion-group is-open="group.open" ng-repeat="file in files" ng-click="renderResultContent($index)">
 
-                            <h4 style="margin-left: 50px;">
-                                <label class="small">/{{file.folder}}</label>
-                            </h4>
-                        </div>
-                        <div class="col-md-1 h1">
-                            <span class="badge" style="font-size: 18px;">{{file.positions.length}}</span>
-                        </div>
-                    </div>
-                </accordion-heading>
+            <div ng-include src="'results/partials/ResultRow.html'"></div>
 
-                <h4 ng-repeat="res in file.rrr | orderBy:prop | filter:query | limitTo:file.limit">
-                    <li>
-                        line:{{res.line}}
-                        position:{{res.pos}}
+        </accordion-group>
+    </accordion>
 
-                    </li>
-                </h4>
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <a class="btn btn-info" ng-click="loadMoreResult($index)">
-                            <span class="glyphicon glyphicon-triangle-left"></span> Load more {{file.limit}}/{{file.positions.length}}</a>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <a class="btn btn-warning" href="#/books"><span class="glyphicon glyphicon-refresh">
-
-                        </span> Load less</a></div>
-                    <div class="btn-group" role="group">
-                        <a class="btn btn-danger" href="#/books"><span class="glyphicon glyphicon-list-alt">
-
-                        </span> Collapse</a></div>
-                </div>
-
-            </accordion-group>
-        </accordion>
-    </div>
 </div>
 
 
