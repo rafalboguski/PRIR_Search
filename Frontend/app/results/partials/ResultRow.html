@@ -31,13 +31,15 @@
 <div class="col-md-7">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <a class="btn btn-info" ng-click="loadMoreResult($index)">
+            <a class="btn btn-success" ng-click="files[idx].open = false;">
                 <span class=""></span> Load more
                 {{file.limit}}/{{file.positions.length}}</a>
         </div>
         <div class="btn-group" role="group">
-            <a class="btn btn-warning" href="#/books"><span class=""></span> Load less</a></div>
-        <div class="btn-group" role="group">
-            <a class="btn btn-danger" href="#/books"><span class=""></span> Collapse</a></div>
+            <a class="btn btn-danger" ng-click="loadLessResult($index)">
+                <span class=""></span>Collapse</a>
+        </div>
+
     </div>
+
 </div>

@@ -33,14 +33,15 @@ var app = angular.module('myApp.results', [
             if (!$scope.files[idx].open) {
                 $scope.files[idx].limit = 12;
                 $scope.files[idx].rrr = $scope.files[idx].positions;
-                $scope.files[idx].open = true;
-                console.log('Result.js: ','renderResult ', idx);
             }
         };
 
         $scope.loadMoreResult = function (idx) {
             $scope.files[idx].limit += 24;
-            console.log('Result.js: ','renderResult-Load_More ', idx);
+            if($scope.files[idx].limit>$scope.files[idx].positions.length){
+                $scope.files[idx].limit = $scope.files[idx].positions.length;
+
+            }
         };
 
         $scope.book_line = "Loading ...";

@@ -28,7 +28,7 @@
     <h4><input type="checkbox" ng-model="oneAtATime">Open only one at a time</input></h4>
 
     <accordion close-others="oneAtATime">
-        <accordion-group is-open="group.open" ng-repeat="file in files" ng-mouseover="renderResultContent($index)">
+        <accordion-group is-open="file.open" ng-repeat="file in files" ng-mouseover="renderResultContent($index)">
 
             <div ng-include src="'results/partials/ResultRow.html'"></div>
 

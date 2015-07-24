@@ -87,6 +87,43 @@ div.ng-enter {
     transition: 1s;
     opacity: 0;
 }
+div.ng-leave {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 1;
+}
 div.ng-enter-active {
+    opacity: 1;
+}
+
+/*button {*/
+    /*opacity: 1;*/
+/*}*/
+/*button.ng-enter {*/
+    /*-webkit-transition: 1s;*/
+    /*transition: 1s;*/
+    /*opacity: 0;*/
+/*}*/
+/*button.ng-leave {*/
+    /*-webkit-transition: 1s;*/
+    /*transition: 1s;*/
+    /*opacity: 1;*/
+/*}*/
+/*button.ng-enter-active {*/
+    /*opacity: 1;*/
+/*}*/
+
+button {
+
+    transition: all 1s ease-out;
+}
+button.ng-enter,
+button.ng-leave.ng-leave-active {
+    transition: all 1s ease-out;
+    opacity: 0;
+}
+button.ng-enter.ng-enter-active,
+button.ng-leave {
+    transition: all 1s ease-out;
     opacity: 1;
 }
